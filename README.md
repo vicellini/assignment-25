@@ -51,11 +51,11 @@ The entire site must be built in React and can include views such as Welcome, Si
 ### Explorer Mode
 
 - Entire experience should be mobile-first, with an optimized mobile view
-- User can include an optional image link.
+- User can include an optional image link for a chirp.
+- User can like chirps.
 - Provide client side form validation
   - Email must have '@' and '.XXX' at the end
   - Password must have a number
-  - 
 
 ### Adventurer Mode
 - User can see list of other users, and follow users
