@@ -1,4 +1,4 @@
-#ES6 Module Bundler Setup
+# Fullstack React - Build a Microblogging Platform Chirp
 
 ##Overview
 We've been working on React this week, and syncing our application to an API. Now you're going to put all that knowledge together by building a microblogging social network app, called _Chirp_! 
@@ -84,3 +84,5 @@ The entire site must be built in React and can include views such as Welcome, Si
   - SignUpView
   - ChirpsView
   - HomePageView
+
+3. Create your AppViewController
