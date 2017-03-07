@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 // ----------------------
 // DATA TABLE
 // ----------------------
-const itemSchema = new Schema({
+const chirpSchema = new Schema({
   // example of optional fields
   msg:        { type: String, required: true },
-  from:       { type: String },
   imgLink:    { type: String },
-  rating:     { type: String }
+  likes:      [{type: Schema.Types.ObjectId, ref: 'User'}],
+  _userId:    { type: Schema.Types.ObjectId, ref: 'User'}
 
 })
 
 
-module.exports = mongoose.model('Item', itemSchema)
+module.exports = mongoose.model('Chirp', itemSchema)

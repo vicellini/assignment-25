@@ -1,5 +1,11 @@
 #ES6 Module Bundler Setup
 
+##Overview
+We've been working on React this week, and syncing our application to an API. Now you're going to put all that knowledge together by building a microblogging social network app, called _Chirp_! 
+
+![Chirp](https://tiy-learn-content.s3.amazonaws.com/426f7475-chirp-logo.png)
+
+
 ##Setup 
 
 ##### 1. Clone this repo
@@ -18,98 +24,63 @@ npm install
 npm run go
 ```
 
-- Server
-```
-npm start
-```
-
 ##### 4. Workflow
 Do scss and javascript work in the `src/` directory. It will compile to the `dist/` with the taskrunner.
 
 `index.html` pages are served out of the `dist/`
 
-##Webpack Configuration:
-```
-const webpack = require('webpack')
-const nodeEnv = process.env.NODE_ENV || 'production'
+##### 5 Seed Data
+[later]
 
-module.exports = {
-  devtool : 'source-map',
-  entry:   { filename: './src/index.js' },
-  output : { filename: './dist/js/app.js' },
-  module: {
-    loaders: [	    
-	 ]
-  },
-  plugins: [
-     //uglify js
-     new webpack.optimize.UglifyJsPlugin({
-			compress: { warnings: false }, 
-			output: {comments: false},
-         sourceMap: true
-	  }),
-	
-     //env plugin
-	  new webpack.DefinePlugin({
-        'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
-	  }),
-  ]
-}
-
-```
+##### 6 User Authentication
+[later]
 
 
-#Configure #ES6
-#### In `package.json`
-- babel-core
-- babel-loader
-- babel-preset-es2015
+### Normal Mode
+- User can submit a chirp
+- User can see all chirps posted by all users.
+- User can signup with a name (`username`), email (`email`), password(`password`), and upload avatar photo (`avatarUrl`)
+- User can post a new _chirp_, a 170-character limited text field
+- User can login in with username and password
+- User can logout
+- User expects a well-designed, attractive experience
+- Authenticated User should see a chirp form on the `chirps` route to submit a new chirp. Unauthenticated users should not be able to submit new chirps.
 
-#### ES6: In `webpack.config.js`
-```
-	...
-   loaders: [
-		{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			loader: 'babel-loader',
-			query: {
-				presets: ['es2015']
-			}
-		},
-   ...
-```
+The entire site must be built in React and can include views such as Welcome, SignUp, Login, and Chirps. The actual _chirp_ page must be real-time meaning it must submit to and pull from the API without refreshing the page.
+
+### Explorer Mode
+
+- Entire experience should be mobile-first, with an optimized mobile view
+- User can include an optional image link.
+- Provide client side form validation
+  - Email must have '@' and '.XXX' at the end
+  - Password must have a number
+  - 
+
+### Adventurer Mode
+- User can see list of other users, and follow users
+- User can unfollow a user they follow
+- User can see _chirps_ from themselves and people they follow in a chronological list below the _chirp_ field
 
 
-### Configure Scss
-#### (in `package.json`
-```
-    "css-loader": "^0.26.1",
-    "sass-loader": "^5.0.1",
-    "style-loader": "^0.13.1",
-    "node-sass": "^4.5.0",
-    "extract-text-webpack-plugin": "^2.0.0-beta.5",
-```
+### Epic Mode
+- _Chirps_ should use infinite scroll, showing 10 initially and revealing more chirps as they scroll down the page.
+- User can view a profile page which will show only their _chirps_
+- User can search for _chirps_
+- User can search for other users
+- Connect to filestack API to upload images for chirp.
 
-#### (2) in `webpack.config.js`
-```
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-modules: {
-  loaders: [
-	  ...
-     {
-		  test: /\.scss$/,
-		  loader: ExtractTextPlugin.extract({fallbackLoader: "style-loader", loader: "css-loader!sass-loader"})		 
-	  },
-	]
-  },
-
-  plugins: {
-	 ...
-    new ExtractTextPlugin({filename: './dist/styles.css', allChunks: true})
-  }
-
-}
-  
-```
+#### Roadmap to Success
+1. Create the Backbone Router with the major app routes
+  ```
+  'chirps' : 'showChirpsComponent'
+  'login' : 'showLoginComponent'
+  'register' : 'showRegisterComponent'
+  '' (root) : 'showWelcomePageComponent'
+  ```
+2. Create React View Components for Routes
+  - LoginView
+  - SignUpView
+  - ChirpsView
+  - HomePageView
