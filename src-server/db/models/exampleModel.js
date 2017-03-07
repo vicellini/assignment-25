@@ -14,4 +14,4 @@ const chirpSchema = new Schema({
 })
 
 
-module.exports = mongoose.model('Chirp', itemSchema)
+module.exports = mongoose.model('Chirp', chirpSchema)

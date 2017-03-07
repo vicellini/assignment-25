@@ -4,12 +4,12 @@ const {User} = require('../db/models/userModel.js')
 
 module.exports = function(){
   let authFields = {
-      usernameField: 'email',
+      usernameField: 'username',
       passwordField: 'password'
   }
 
   let onLogin = function(inputUser, inputPW, done){
-      User.findOne({"email": inputUser}, function(err, results){
+      User.findOne({"username": inputUser}, function(err, results){
         if(err || !results){  
           //will trigger failure callback
           done(null , false, {message: "no user exists with that email"})   

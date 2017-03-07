@@ -7,11 +7,11 @@ function authController(UserMod){
      // console.log(req.body)
      let newUser = new UserMod(req.body)
 
-     UserMod.find({email: req.body.email}, function(err, results){
+     UserMod.find({username: req.body.uusername}, function(err, results){
        if (err) return res.status(500).send('error saving querying db for user')
 
        if(results !== null && results.length > 0 ) { 
-         return res.status(401).send(`oops, record for <${req.body.email}> already exists`)
+         return res.status(401).send(`oops, record for <${req.body.username}> already exists`)
        }
 
        newUser.save(function(err, record){
@@ -38,7 +38,7 @@ function authController(UserMod){
 	function _handleAuth(req,res,next){
 		return (err,user,info)=>{
 		  if (err || !user) {
-			 return res.status(400).send('incorrect email/password combination')
+			 return res.status(400).send('incorrect username/password combination')
 		  }
 		  req.login(user, (err)=>{
 			  if (err) { return res.status(500).send(err) }
@@ -51,9 +51,9 @@ function authController(UserMod){
 	function logoutUser(req, res) {
      if (!req.user) { return res.json({msg: 'error: no current user'}).status(200) }
      
-	  let email = req.user.email
+	  let username = req.user.username
      req.logout()
-     return res.json({msg: `user <${email}> logged out`}).status(200) 
+     return res.json({msg: `user <${username}> logged out`}).status(200) 
    }
 
 	return {

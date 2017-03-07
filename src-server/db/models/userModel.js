@@ -6,12 +6,12 @@ const Schema = mongoose.Schema;
 // ----------------------
 const usersSchema = new Schema({
   // required for authentication: DO NOT TOUCH Or You May Get Punched
-  email:     { type: String, required: true },
+  username:     { type: String, required: true },
   password:  { type: String, required: true },
   // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x
   
    // example of optional fields
-  username:  { type: String, required: true },
+  personalName:  { type: String, required: true },
   avatarUrl: { type: String },
   following: [{type: Schema.Types.ObjectId, ref: 'User'}],
   followers: [{type: Schema.Types.ObjectId, ref: 'User'}],

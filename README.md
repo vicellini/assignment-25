@@ -39,7 +39,7 @@ Do scss and javascript work in the `src/` directory. It will compile to the `dis
 ### Normal Mode
 - User can submit a chirp
 - User can see all chirps posted by all users.
-- User can signup with a name (`username`), email (`email`), password(`password`), and upload avatar photo (`avatarUrl`)
+- User can signup with a name (`username`), personal name (`personalName`), password(`password`), and upload an avatar photo (`avatarUrl`)
 - User can post a new _chirp_, a 170-character limited text field
 - User can login in with username and password
 - User can logout
@@ -79,10 +79,12 @@ The entire site must be built in React and can include views such as Welcome, Si
   'register' : 'showRegisterComponent'
   '' (root) : 'showWelcomePageComponent'
   ```
-2. Create React View Components for Routes
+2. Create React View Components for Routes. Create the simplest HTML to make them functional 
   - LoginView
+    - should have input fields for email and password
   - SignUpView
+    - should have fields for email, username, 
   - ChirpsView
   - HomePageView
 
-3. Create your AppViewController
+3. Create your AppViewController component
