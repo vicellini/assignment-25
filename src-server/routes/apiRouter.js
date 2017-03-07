@@ -4,8 +4,8 @@ const apiRouter = Router()
 /*
  * NOTE: the model for the data-table should not have the name 'SomeModel'
  */
-let ExampleModel = require('../db/models/exampleModel.js')
-let apiController = require('../controllers/apiController.js')(ExampleModel)
+let ChirpModel = require('../db/models/exampleModel.js')
+let apiController = require('../controllers/apiController.js')(ChirpModel)
 let {	getMany, getOne, 	createOne,	updateOne, deleteOne} = apiController
 
 apiRouter

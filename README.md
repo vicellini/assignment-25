@@ -1,4 +1,4 @@
-# Fullstack React - Build a Microblogging Platform Chirp
+# Fullstack React - Build a Microblogging Platform:  Chirp
 
 ##Overview
 We've been working on React this week, and syncing our application to an API. Now you're going to put all that knowledge together by building a microblogging social network app, called _Chirp_! 
@@ -87,7 +87,7 @@ The entire site must be built in React and can include views such as Welcome, Si
   - LoginView
     - should have input fields for email and password
   - SignUpView
-    - should have fields for email, username, 
+    - should have fields for username, personalName,  
   - ChirpsView
   - HomePageView
 

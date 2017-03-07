@@ -12,10 +12,10 @@ const usersSchema = new Schema({
   
    // example of optional fields
   personalName:  { type: String, required: true },
-  avatarUrl: { type: String },
-  following: [{type: Schema.Types.ObjectId, ref: 'User'}],
-  followers: [{type: Schema.Types.ObjectId, ref: 'User'}],
-  createdAt: { type: Date, default: Date.now }
+  avatarUrl:     { type: String },
+  following:     [ {type: Schema.Types.ObjectId, ref: 'User'} ],
+  followers:     [ {type: Schema.Types.ObjectId, ref: 'User'} ],
+  createdAt:     { type: Date, default: Date.now }
 
 })
 

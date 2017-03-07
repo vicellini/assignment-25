@@ -86,7 +86,6 @@ app.use('/', indexRouter)
 app.use('/api', apiRouter)
 app.use('/auth', authRouter)
 
-
 //---------------------
 //EXECUTION SCRIPTS
 //---------------------

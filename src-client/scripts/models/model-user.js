@@ -1,4 +1,9 @@
 const UserModel = Backbone.Model.extend({
+	initialize: function(){
+		
+	},
+	urlRoot: '/api/users',
+	idAttribute: '_id'
 })
 
 UserModel.logIn =  function(username, pw){
@@ -38,7 +43,6 @@ UserModel.getCurrentUser =  function(){
 		url: '/auth/current'
 	})
 }
-
 
 UserModel.logOut =  function(){
 	console.log('logging in!')
