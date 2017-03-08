@@ -10,7 +10,7 @@ We've been working on React this week, and syncing our application to an API. No
 
 ##### 1. Clone this repo
 ```
-git clone git@github.com:t3tools/webpack-es6-and-scss.git «your-projet»
+git clone git@github.com:TIY-Charleston-Front-End-Engineering/assignment-fullstack-react-app-chirp.git «assignment-XX»
 ```
 
 ##### 2. Install the packages
